@@ -10,6 +10,7 @@ const root=resolvers;
 
 const app=express();
 
+    //esto es una prueba de subida de github
 app.get('/',(req,res)=>{
 res.send('Todo Listo');
 
