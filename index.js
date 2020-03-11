@@ -11,6 +11,7 @@ const root=resolvers;
 const app=express();
 
     //esto es una prueba de subida de github
+    //segundo commit.
 app.get('/',(req,res)=>{
 res.send('Todo Listo');
 
