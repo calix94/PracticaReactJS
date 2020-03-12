@@ -1,33 +1,25 @@
 import express from 'express';
 //graphql
 import graphqlHTTP from 'express-graphql';
-import schema from './schema'; 
+import { schema } from './data/schema';
+const app = express();
 
-//resolvers
-import resolvers from './resolvers';
-
-const root=resolvers;
-
-const app=express();
-
-    //esto es una prueba de subida de github
-    //segundo commit.
-app.get('/',(req,res)=>{
-res.send('Todo Listo');
+//esto es una prueba de subida de github
+//segundo commit.
+//este es el tercer commit
+app.get('/', (req, res) => {
+    res.send('Todo Listo');
 
 });
 
 
 
-app.use('/graphql',graphqlHTTP({
+app.use('/graphql', graphqlHTTP({
 
     //que schema va a usar
-
     schema,
-    //el resolver se pasa como root value 
-    rootValue:root,
     //utilizar graphical
-    graphiql:true
+    graphiql: true
 }));
 
-app.listen(8000,()=>console.log('El servidor esta funcionaod'));
+app.listen(8000, () => console.log('El servidor esta funcionaod'));
